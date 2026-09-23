@@ -1,0 +1,6 @@
+endpoints:
+  - url: https://api-dev.example.com/v1
+    description: Endpoint de desarrollo para la API de consulta de movimientos
+credentials:
+  apiKey: dev-api-key-12345
+  secret: dev-secret-abcdef

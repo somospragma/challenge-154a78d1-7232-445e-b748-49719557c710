@@ -1,0 +1,7 @@
+# Política de limitación de tasa
+
+type: RateLimiting
+description: Limitación de tasa que restringe a 100 solicitudes por minuto para el tercero específico.
+
+requests: 100
+perMinute: true

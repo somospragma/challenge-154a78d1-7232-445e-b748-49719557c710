@@ -1,0 +1,6 @@
+# Política de seguridad para autenticación basada en API key
+
+type: SecurityScheme
+description: Autenticación basada en API key para el endpoint expuesto.
+
+# SUPERFICIE DE PRÁCTICA - Stub sin implementación

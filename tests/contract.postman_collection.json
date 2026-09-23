@@ -1,0 +1,68 @@
+{
+  "info": {
+    "name": "API Gateway Contract Tests",
+    "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+    "description": "Postman collection to validate the API Gateway contract, including security and rate limiting policies.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Test Security Policy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "api-key",
+            "value": "{{apiKey}}"
+          }
+        ],
+        "url": {
+          "raw": "{{endpoint}}/movements"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n\n"            
+          }
+        }
+      ]
+    },
+    {
+      "name": "Test Rate Limiting Policy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "api-key",
+            "value": "{{apiKey}}"
+          }
+        ],
+        "url": {
+          "raw": "{{endpoint}}/movements"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 429 after exceeding rate limit', function () {\n    pm.response.to.have.status(429);\n});\n\n"            
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "endpoint",
+      "value": "{{endpoint}}"
+    },
+    {
+      "key": "apiKey",
+      "value": "{{apiKey}}"
+    }
+  ]
+}

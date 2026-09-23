@@ -1,0 +1,6 @@
+endpoints:
+  - url: https://api-prod.example.com/v1
+    description: Endpoint de producción para la API de consulta de movimientos
+credentials:
+  apiKey: prod-api-key-67890
+  secret: prod-secret-ghijkl

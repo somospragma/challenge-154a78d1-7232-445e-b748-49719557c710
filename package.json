@@ -1,0 +1,46 @@
+{
+  "name": "api-gateway-policies",
+  "version": "1.0.0",
+  "description": "API Gateway con políticas de seguridad y rate limiting para exposición de API a terceros",
+  "main": "openapi.yaml",
+  "scripts": {
+    "lint": "npx @redocly/cli lint openapi.yaml",
+    "validate": "npx @redocly/cli lint openapi.yaml --config=redocly.yaml",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "openapi",
+    "api-gateway",
+    "security",
+    "rate-limiting",
+    "third-party-integration"
+  ],
+  "author": "Pragma S.A.",
+  "license": "ISC",
+  "devDependencies": {
+    "@redocly/cli": "^1.12.0"
+  },
+  "dependencies": {},
+  "redocly": {
+    "lint": {
+      "extends": ["recommended"],
+      "rules": {
+        "info-license": "off",
+        "operation-operationId": "error",
+        "operation-summary": "error",
+        "path-params": "error",
+        "no-unused-components": "warn",
+        "no-ambiguous-paths": "error",
+        "security-defined": "error"
+      },
+      "theme": {
+        "openapi": {
+          "hideHostname": false,
+          "expandResponses": "200,201",
+          "requiredPropsFirst": true,
+          "jsonSampleExpandLevel": 2
+        }
+      }
+    }
+  }
+}
